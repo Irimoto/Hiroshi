@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charest="utf-8">
+	<title>JavaScriptの練習</title>
+	<style>
+		.myStyle{
+			font-weight: bold;
+			border: 1px solid gray;
+		}
+	</style>
+</head>
+<body>
+	<h1>見出し</h1>
+	<p id="msg">こんにちは！</p>
+	<button id="add">Click!</button>
+	<script src="myscript.js"></script>
+	<script>
+		/*
+			変数：データにつけるラベル
+
+			データ型
+				- 文字列
+				- 数値
+				- 真偽値(true/false)
+				- オブジェクト
+					-　配列
+					- 関数
+					- 組み込みオブジェクト
+				- undefined 定義されていない
+				- null 何もない
+		*/
+
+			/*　数値
+				10
+				2.5
+				-2.5
+				演算子
+				+ - * / %
+				+= 代入を伴う演算子
+				++ -- 単項演算子
+			*/
+			var x;
+			x = 10 * 2;
+			x = 10 % 3;
+			// x = x + 5;
+			x += 5;
+			x++;
+			x--;
+
+			console.log(x);
+
+		var msg = "hello world";
+		console.log(msg);
+
+		/*
+			文字列
+				表現方法
+				特殊文字
+			演算子
+		*/
+		var s;
+		s = "hello";
+		s = 'hel\'lo';
+		// \n 改行
+		// \t タブ
+		s = 'it\'s\n a pe\tn.';
+
+		s = "hello" + "world";
+		s = "5" + 5; 
+
+		console.log(s);
+
+		/*
+			条件分岐
+			if(条件){
+				真
+			}else{
+				偽
+			}
+
+			比較演算子
+			> <
+			>= <=
+			=== ==
+			!==  !=
+
+			論理演算子
+			AND &&
+			OR !!
+			NOT !
+			score > 60 && score < 80
+		*/
+		var score = 80;
+		if (score > 60){
+			console.log("ok!");
+		}else if (socre > 40){
+			console.log("soso...");
+		}else{
+			console.log("ng!");
+		}
+		/*
+			真偽値
+				文字列：　空文字以外だったらtrue
+				数値: 0 か NaN　以外だったらture
+				true / false
+				object: null 以外だったらtrue
+				undefined, null -> false
+		*/
+
+		if(x){
+			//処理
+		}
+
+		if (x !== '') {
+			//処理
+		}
+		/*
+			三項演算子
+
+			var a, b,c;
+			if(条件){
+				a=b;
+			}else{
+				a=c;
+			}
+			a = (条件) ? b :c ;
+		*/
+		var max, x, y;
+		max =(x > y) ? x : y;
+
+		/*
+			条件分岐
+			switch
+		*/
+		var signal = "blue";
+		switch (signal){
+			case "red":
+				console.log("stop!");
+				break;
+			case "blue":
+			case "green":
+				console.log("go!");
+				break;
+			case "yellow":
+				console.log("slow down!");
+				break;
+			default:
+				console.log("wrong signal");
+				break;
+		}
+		/*
+			ループ処理
+			while
+			do...while
+		*/
+/*
+		var i=0;
+		while(i<10){
+			console.log(i);
+			i++;
+		}
+*/
+
+	var i = 0;
+	do{
+		console.log(i);
+		i++;
+	}while(i < 10);
+		/*
+		ロープ処理
+		for
+
+		break ループ処理を抜ける
+		continue　ループ処理を１回スキップ
+		*/
+	for (var i = 0; i< 10; i++){
+		if(i ===5){
+			//break;
+			continue;
+		}
+		console.log(i);
+	}
+	/*
+		alert
+		confirm
+		prompt
+	*/
+	//alert("hello");
+	//var answer =  confirm("are you sure?");
+	//console.log(answer);
+	/*
+	if (confirm("本当に削除しますか？")) {
+		//削除処理
+	};
+	*/
+	//var name = prompt("お名前は?","名無しさん");
+	//console.log(name);
+	/*
+		関数: 複数の処理
+
+		function 関数名(引数){
+			処理
+			return 返り値
+		}
+	*/
+	/*
+	function hello(name){
+		var msg = "hello " + name; // ローカル変数
+		return msg;
+	}
+	 var greet = hello("Tom");
+	 console.log(greet);
+	 //console.log(msg);
+	*/
+	/*var hello = function(name){ //無名関数, 匿名関数
+		var msg = "hello "+name; //ローカル変数
+		return msg; 
+	};
+	var greet = hello("Tom");
+	console.log(greet);
+	*/
+	/*
+		即時関数
+		(function(name){
+		console.log("hello "+ name);
+	})("Tom");
+	*/
+	(function(){
+	var x = 10,
+		y = 20;
+	console.log(x + y);
+	})();
+
+	/*
+		タイマー処理
+			setInterval
+			setTimeout
+	*/
+	/*
+	var i = 0;
+	function show(){
+		console.log(i++);
+		var tid = setInterval(function(){
+			show();
+		}, 1000);
+		if(i > 3){
+			clearTimeout(tid);
+		}
+	}
+	show();
+	*/
+	/*
+		配列：グループ化されたデータ
+	*/
+	//var socre_1 = 100, score_2 =200;
+	/*
+	var score = [100,300,500,"taguchi"];
+	//console.log(score[0]); //添字　0,1, ...
+	score[2]=400;
+	console.log(score);
+	*/
+	/*
+	var m =[
+		[1,2,3],
+		[4,5,6]
+	];
+	console.log(m[1][1]);
+	*/
+	/*
+		オブジェクト
+			名前と値
+	*/
+	/*
+	var user = {
+		email: "taguchi@mil.com", //プロパティ
+		score:80,
+		greet: function(name){ // メソッド
+			console.log("hello," + name + " from "+this.email);
+		}
+	};
+	//console.log(user["email"]);
+	//console.log(user.email);
+	//user.score =100;
+	//console.log(user);
+	user.greet("Tom");
+	*/
+	/*
+		組み込みオブジェクト
+
+		-String
+		-Array
+		-Math
+		-Date
+	*/
+	//var s = new String("taguchi");
+	/*var s ="taguchi"; //文字列リテラル
+	console.log(s.length);
+	console.log(s.replace("t","T"));
+	console.log(s.substr(1,3));
+	*/
+	/*
+	var a = new Array(100,300,200);
+	// var a =[100,300,200];
+	console.log(a.length);
+	// unshift -> array <- pop
+	// shift <- array ->pop
+	a.push(500);
+	console.log(a);
+	a.splice(1,2 , 800,1000);
+	console.log(a);
+	*/
+	/*
+	console.log(Math.PI);
+	console.log(Math.ceil(5.3));
+	console.log(Math.floor(5.3));
+	console.log(Math.round(5.3));
+	console.log(Math.random());
+
+	var d = new Date();
+	//var d = new Date(2014, 1, 11,10,20 ,30);
+	console.log(d.getFullYear());
+	console.log(d.getMonth());
+	console.log(d.getTime()); //1970/1/1
+	*/
+	/*
+
+	*/
+	//console.dir(window);
+	//console.log(window.outerHeight);
+	//window.location.href ='http://dotinstall.com';
+
+	//window.document -今開いているページ
+	//document - 今開いているページ
+
+	//document objecy model (DOM)
+	var e = document.getElementById('msg');
+	e.textContent = 'hello';
+	e.style.color ='red';
+	e.className ='myStyle';
+
+	/*
+		body
+			p
+				text
+	*/
+
+	document.getElementById('add').addEventListener('click',function(){
+		var greet = document.createElement('p'),
+			text = document.createTextNode('hello world');
+		document.body.appendChild(greet).appendChild(text);
+	});
+	</script>
+</body>
+</html>
